@@ -1,8 +1,10 @@
+directive @model(tsType: String!, from: String!) on OBJECT
+
 type Query {
   homeChannel: Channel
 }
 
-type Channel {
+type Channel @model(tsType: "ChannelModel", from: "./models.ts") {
   id: ID!
   description: String
   team: Team

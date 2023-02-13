@@ -1,20 +1,23 @@
 import * as Resolvers from "./__generated__/resolvers.interface";
 
 export const Query: Resolvers.Query.Resolvers = {
-  homeChannel: (root, args, context) => {
+  homeChannel: (root, args, context, info) => {
     const channel = Channels.find(({ id }) => id === "c-1");
-    const team = Teams.find(({ id }) => id === channel.teamId);
     return {
       ...channel,
-      team: team,
     };
   },
 };
 
-export const Channel: Resolvers.Channel.Resolvers = {};
+export const Channel: Resolvers.Channel.Resolvers = {
+  team: (model, args, context, info) => {
+    return Teams.find(({ id }) => id === model.teamId);
+  }
+};
 
 export const resolvers = {
   Query,
+  Channel,
 };
 
 const Channels = [
