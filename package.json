@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec ts-node src/index.ts localhost 4000",
-    "generate:interfaces": "supermassive generate-interfaces ./src/schema.gql"
+    "generate:interfaces": "supermassive generate-interfaces --legacy ./src/schema.gql"
   },
   "keywords": [],
   "dependencies": {
