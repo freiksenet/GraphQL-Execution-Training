@@ -1,0 +1,14 @@
+type Query {
+  homeChannel: Channel
+}
+
+type Channel {
+  id: ID!
+  description: String
+  team: Team
+}
+
+type Team {
+  id: ID!
+  title: String
+}

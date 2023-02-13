@@ -1,0 +1,26 @@
+{
+  "name": "graphql-execution-training",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts localhost 4000",
+    "generate:interfaces": "supermassive generate-interfaces ./src/schema.gql"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@types/node": "16.11.10",
+    "apollo-server": "latest",
+    "graphql": "latest",
+    "ts-node": "10.4.0",
+    "tsc": "2.0.3",
+    "typescript": "4.5.2",
+    "@apollo/server-plugin-landing-page-graphql-playground": "latest"
+  },
+  "devDependencies": {
+    "@graphitation/cli": "1.1.0-beta.1",
+    "@graphitation/supermassive": "latest",
+    "fast-glob": "^3.2.12",
+    "nodemon": "1.18.4"
+  }
+}
