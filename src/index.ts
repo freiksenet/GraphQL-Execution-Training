@@ -12,10 +12,10 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
-  fieldResolver: (source, args, context, info) => {
-    console.log(`>>> ${responsePathAsArray(info.path).join(".")} called:`, source);
-    return defaultFieldResolver(source, args, context, info)
-  }
+  // fieldResolver: (source, args, context, info) => {
+  //   console.log(`>>> ${responsePathAsArray(info.path).join(".")} called:`, source);
+  //   return defaultFieldResolver(source, args, context, info)
+  // }
 });
 
 server.listen().then(({ url }) => {

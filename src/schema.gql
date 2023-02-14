@@ -2,6 +2,7 @@ directive @model(tsType: String!, from: String!) on OBJECT
 
 type Query {
   homeChannel: Channel
+  pinnedChannels: [Channel!]!
 }
 
 type Channel @model(tsType: "ChannelModel", from: "./models.ts") {

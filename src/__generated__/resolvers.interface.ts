@@ -6,8 +6,10 @@ import type { Channel, Team } from "./models.interface";
 export declare namespace Query {
     export interface Resolvers {
         readonly homeChannel?: homeChannel;
+        readonly pinnedChannels?: pinnedChannels;
     }
     export type homeChannel = (model: unknown, args: {}, context: unknown, info: ResolveInfo) => PromiseOrValue<Channel | null | undefined>;
+    export type pinnedChannels = (model: unknown, args: {}, context: unknown, info: ResolveInfo) => PromiseOrValue<ReadonlyArray<Channel>>;
 }
 export declare namespace Channel {
     export interface Resolvers {
